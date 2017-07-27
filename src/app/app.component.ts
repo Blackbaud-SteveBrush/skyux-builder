@@ -17,6 +17,7 @@ import {
 } from '@blackbaud/auth-client';
 
 import { BBHelp } from '@blackbaud/help-client';
+import { BBFeedback } from '@blackbaud/feedback-client';
 
 import {
   SkyAppConfig,
@@ -180,6 +181,7 @@ export class AppComponent implements OnInit {
   private initShellComponents() {
     const omnibarConfig = this.config.skyux.omnibar;
     const helpConfig = this.config.skyux.help;
+    const feedbackConfig = this.config.skyux.feedback;
 
     if (omnibarConfig) {
       this.setParamsFromQS(omnibarConfig);
@@ -195,6 +197,10 @@ export class AppComponent implements OnInit {
 
     if (helpConfig) {
       BBHelp.load(helpConfig);
+    }
+
+    if (feedbackConfig) {
+      BBFeedback.load(feedbackConfig);
     }
   }
 }

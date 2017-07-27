@@ -42,6 +42,7 @@ export interface SkyuxConfig {
   cssPath?: string;
   command?: string;
   compileMode?: string;
+  feedback?: boolean;
   help?: any;
   host?: SkyuxConfigHost;
   importPath?: string;
